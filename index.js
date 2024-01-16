@@ -3,6 +3,7 @@ require('dotenv').config()
 const express = require('express')
 
 const app = express()
+// hard coded value for port
 const port = 4000
 
 app.get('/', (req, res)=> {
@@ -18,6 +19,9 @@ app.get('/login', (req, res)=> {
 // app.listen(port, ()=>{
 //     console.log(`Example app listening on port ${port}`)
 // })
+
+// using port number provided by company 
 app.listen(process.env.PORT, ()=>{
-    console.log(`Example app listening on port ${port}`)
+    console.log(`Example app listening on port ${process.env.PORT}`)
 })
+// Advantage: Rather make changes in whole code, just set the PORT into env file
